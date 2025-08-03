@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Portfolio</title>
+    <link rel="stylesheet" href="style.css"> </head>
+<body>
+    
+<script src="server.js"></script>
+    <header>
+        <nav>
+            <div class="logo">Ibrahim Afridi</div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1> Hi, I'm <span>Abrahim Afridi</span></h1>
+            <p>An Aspiring Web Developer passionate about creating engaging and functional web experiences.</p>
+            <a href="#projects" class="btn">View My Work</a>
+            <a href="#contact" class="btn secondary-btn">Get in Touch</a>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <h2>About Me</h2>
+        <div class="about-content">
+            <img src="IMG-20250801-WA0005.jpg" alt="Your Profile Picture" class="profile-pic">
+            <p>
+                Hello! I'm [Your Name], a budding web developer eager to learn and grow in the exciting world of web technologies. I'm currently focusing on building a strong foundation in frontend development (HTML, CSS, JavaScript) and exploring backend concepts.
+            </p>
+            <p>
+                My goal is to create intuitive and performant web applications that solve real-world problems. I'm excited about the journey of becoming a full-stack developer and contributing to impactful projects.
+            </p>
+        </div>
+    </section>
+
+    <section id="projects" class="projects">
+        <h2>My Projects</h2>
+        <div class="project-grid">
+            <div class="project-card">
+                <h3>Project Title 1</h3>
+                <img src="IMG-20250801-WA0009.jpg" alt="Project 1 Screenshot">
+                <p>A brief description of your first project. Mention its purpose and what you learned.</p>
+                <div class="technologies">
+                    <span>HTML</span><span>CSS</span><span>JavaScript</span>
+                </div>
+                <div class="project-links">
+                    <a href="#" target="_blank">Live Demo</a>
+                    <a href="#" target="_blank">GitHub Repo</a>
+                </div>
+            </div>
+            <div class="project-card">
+                <h3>Project Title 2</h3>
+                <img src="IMG-20250801-WA0006.jpg" alt="Project 2 Screenshot">
+                <p>A brief description of your second project. This could be a small app or a challenge solution.</p>
+                <div class="technologies">
+                    <span>HTML</span><span>CSS</span><span>JavaScript</span><span>(e.g., React)</span>
+                </div>
+                <div class="project-links">
+                    <a href="#" target="_blank">Live Demo</a>
+                    <a href="#" target="_blank">GitHub Repo</a>
+                </div>
+            </div>
+            </div>
+    </section>
+
+    <section id="skills" class="skills">
+        <h2>My Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h3>Frontend</h3>
+                <ul>
+                    <li>HTML5</li>
+                    <li>CSS3</li>
+                    <li>JavaScript (ES6+)</li>
+                    <li>(e.g., React, Vue.js)</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3>Backend</h3>
+                <ul>
+                    <li>(e.g., Node.js, Python/Django/Flask)</li>
+                    <li>(e.g., Express.js)</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3>Databases</h3>
+                <ul>
+                    <li>(e.g., MongoDB, PostgreSQL, MySQL)</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3>Tools & Others</h3>
+                <ul>
+                    <li>Git & GitHub</li>
+                    <li>VS Code</li>
+                    <li>Responsive Design</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Contact Me</h2>
+        <p>Have a question or want to work together? Feel free to reach out!</p>
+        <form class="contact-form">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" rows="5" required></textarea>
+            <button type="submit" class="btn">Send Message</button>
+        </form>
+        <div class="social-links">
+            <a href="mailto:your.email@example.com">Email</a> |
+            <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a> |
+            <a href="https://github.com/yourusername" target="_blank">GitHub</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Your Name. All rights reserved.</p>
+    </footer>
+    <!-- <script src="server.js"></script> -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const sections = document.querySelectorAll('section');
+
+        const observerOptions = {
+            root: null, // relative to the viewport
+            rootMargin: '0px',
+            threshold: 0.1 // 10% of the section must be visible
+        };
+
+        const sectionObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target); // Stop observing once it's visible
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(section => {
+            sectionObserver.observe(section);
+        });
+
+});
+</script>
+
+</body>
+</html>
